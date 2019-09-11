@@ -1,0 +1,30 @@
+{
+  "name": "sunat-catalogs",
+  "version": "1.0.0",
+  "description": "Anexo Nro. 8 - Catálogos de Códigos",
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jldamians/sunat-catalogs.git"
+  },
+  "keywords": [
+    "sunat",
+    "catalogos",
+    "jldamians",
+    "cpe",
+    "pse",
+    "ose"
+  ],
+  "author": "jldamians <jlds161089@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jldamians/sunat-catalogs/issues"
+  },
+  "homepage": "https://github.com/jldamians/sunat-catalogs#readme"
+}
