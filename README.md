@@ -1,10 +1,8 @@
-
 ## `Instalación y uso`
 
-```
+```console
 npm install --save sunat-catalogs
 ```
-
 ```js
 const { Catalogos } = require('sunat-catalogs');
 ```
@@ -19,7 +17,7 @@ const { Catalogos } = require('sunat-catalogs');
 `tituloCat` | `Título del catálogo`
 `nombreCat` | `Nombre del catálogo definida por la agencia`
 `agenciaCat` | `Agencia del catálogo`
-`uri` | `URI del catálogo`
+`uriCat` | `URI del catálogo`
 
 ```javascript
 const { TipoTributo } = require('sunat-catalogs');
@@ -67,72 +65,86 @@ console.log(tributo.codigo());
 // Resultado: OTH
 ```
 
-## `Definición de Catálogos`
-### *`Catálogo Nro. 01 - Código de Tipo de Documento`*
-`Constante` | `Descripción`
-:- | :-
-`TipoDocumento.FA` | `Factura`
-`TipoDocumento.BV` | `Boleta de Venta`
-`TipoDocumento.NC` | `Nota de Crédito`
-`TipoDocumento.ND` | `Nota de Débito`
-`TipoDocumento.GRR` | `Guía de Remisión Remitente`
-`TipoDocumento.CPER` | `Comprobante de Retención`
-`TipoDocumento.GRT` | `Guía de Remisión Transportista`
-`TipoDocumento.CPEP` | `Comprobante de Percepción`
-### *`Catálogo Nro. 02 - Código de Tipo de Monedas`*
-`Constante` | `Descripción`
-:- | :-
-`TipoMoneda.PEN` | `Sol`
-`TipoMoneda.USD` | `US Dollar`
-`TipoMoneda.EUR` | `Euro`
-### *`Catálogo Nro. 05 - Código de Tipos de Tributos`*
-`Constante` | `Descripción`
-:- | :-
-`TipoTributo.IGV` | `Impuesto General a las Ventas`
-`TipoTributo.IVAP` | `Impuesto a la Venta Arroz Pilado`
-`TipoTributo.ISC` | `Impuesto al Consumo de las Bolsas de Plástico`
-`TipoTributo.ICBPER` | `Impuesto a la Bolsa Plastica`
-`TipoTributo.EXP` | `Exportación`
-`TipoTributo.GRA` | `Gratuito`
-`TipoTributo.EXO` | `Exonerado`
-`TipoTributo.INA` | `Inafecto`
-`TipoTributo.OTROS` | `Otros Tributos`
-### *`Catálogo Nro. 07 - Código de Tipo de Afectación del IGV`*
-`Constante` | `Descripción`
-:- | :-
-`TipoAfectacionIgv.GRAVADO_ONEROSA` | `Gravado - Operación Onerosa`
-`TipoAfectacionIgv.GRAVADO_PREMIO` | `Gravado - Retiro por premio`
-`TipoAfectacionIgv.GRAVADO_DONACION` | `Gravado - Retiro por donación`
-`TipoAfectacionIgv.GRAVADO_RETIRO` | `Gravado - Retiro `
-`TipoAfectacionIgv.GRAVADO_PUBLICIDAD` | `Gravado - Retiro por publicidad`
-`TipoAfectacionIgv.GRAVADO_BONIFICACIONES` | `Gravado - Bonificaciones`
-`TipoAfectacionIgv.GRAVADO_ENTREGA_TRABAJADORES` | `Gravado - Retiro por entrega a trabajadores`
-`TipoAfectacionIgv.GRAVADO_IVAP` | `Gravado - IVAP`
-`TipoAfectacionIgv.EXONERADO_ONEROSA` | `Exonerado - Operación Onerosa`
-`TipoAfectacionIgv.EXONERADO_GRATUITA` | `Exonerado - Transferencia gratuita`
-`TipoAfectacionIgv.INAFECTO_ONEROSA` | `Inafecto - Operación Onerosa`
-`TipoAfectacionIgv.INAFECTO_BONIFICACION` | `Inafecto - Retiro por Bonificación`
-`TipoAfectacionIgv.INAFECTO_RETIRO` | `Inafecto - Retiro`
-`TipoAfectacionIgv.INAFECTO_MUESTRAS_MEDICAS` | `Inafecto - Retiro por Muestras Médicas`
-`TipoAfectacionIgv.INAFECTO_CONVENIO_COLECTIVO` | `Inafecto - Retiro por Convenio Colectivo`
-`TipoAfectacionIgv.INAFECTO_PREMIO` | `Inafecto - Retiro por premio`
-`TipoAfectacionIgv.INAFECTO_PUBLICIDAD` | `Inafecto - Retiro por publicidad`
-`TipoAfectacionIgv.INAFECTO_GRATUITA` | `Inafecto - Transferencia gratuita`
-`TipoAfectacionIgv.EXPORTACION` | `Exportación de Bienes o Servicios`
-### *`Catálogo Nro. 08 - Código de Tipos de Sistema de Cálculo del ISC`*
-`Constante` | `Descripción`
-:- | :-
-`TipoSistemaIsc.SISTEMA_VALOR` | `Sistema al valor`
-`TipoSistemaIsc.APLICACION_MONTO_FIJO` | `Aplicación del monto fijo`
-`TipoSistemaIsc.SISTEMA_PRECIO_PUBLICO` | `Sistema de precios de venta al público`
-### *`Catálogo Nro. 22 - Código de Regimen de Percepciones`*
-`Constante` | `Descripción`
-:- | :-
-`RegimenPercepcion.VENTA_INTERNA` | `Percepción venta interna`
-`RegimenPercepcion.ADQUISICION_COMBUSTIBLE` | `Percepción a la adquisición de combustible`
-`RegimenPercepcion.TASA_ESPECIAL` | `Percepción realizada al agente de percepción con tasa especial`
-### *`Catálogo Nro. 23 - Código de Regimen de Retenciones`*
-`Constante` | `Descripción`
-:- | :-
-`RegimenRetencion.TASA_3` | `Tasa 3%`
-`RegimenRetencion.TASA_6` | `Tasa 6%`
+## Definición de Catálogos
+
+### `Catálogo Nro. 01 - Código de Tipo de Documento (TipoDocumento)`
+
+Constante |Código |Descripción
+----------|-------|-------------------------------
+FA        |01     |Factura
+BV        |03     |Boleta de Venta
+NC        |07     |Nota de Crédito
+ND        |08     |Nota de Débito
+GRR       |09     |Guía de Remisión Remitente
+CPER      |20     |Comprobante de Retención
+GRT       |31     |Guía de Remisión Transportista
+CPEP      |40     |Comprobante de Percepción
+
+### `Catálogo Nro. 02 - Código de Tipo de Monedas (TipoMoneda)`
+
+Constante |Codigo | Descripción
+----------|-------|-------------
+PEN       |PEN    |Sol
+USD       |USD    |US Dollar
+EUR       |EUR    |Euro
+
+### `Catálogo Nro. 05 - Código de Tipos de Tributos (TipoTributo)`
+
+Constante |Código |Descripción
+----------|-------|----------------------------------------------
+IGV       |1000   |Impuesto General a las Ventas
+IVAP      |1016   |Impuesto a la Venta Arroz Pilado
+ISC       |2000   |Impuesto al Consumo de las Bolsas de Plástico
+ICBPER    |7152   |Impuesto a la Bolsa Plastica
+EXP       |9995   |Exportación
+GRA       |9996   |Gratuito
+EXO       |9997   |Exonerado
+INA       |9998   |Inafecto
+OTROS     |9999   |Otros Tributos
+
+### `Catálogo Nro. 07 - Código de Tipo de Afectación del IGV (TipoAfectacionIgv)`
+
+Constante                       |Código |Descripción
+--------------------------------|-------|--------------------------------------------
+GRAVADO_ONEROSA                 |10     |Gravado - Operación Onerosa
+GRAVADO_PREMIO                  |11     |Gravado - Retiro por premio
+GRAVADO_DONACION                |12     |Gravado - Retiro por donación
+GRAVADO_RETIRO                  |13     |Gravado - Retiro 
+GRAVADO_PUBLICIDAD              |14     |Gravado - Retiro por publicidad
+GRAVADO_BONIFICACIONES          |15     |Gravado - Bonificaciones
+GRAVADO_ENTREGA_TRABAJADORES    |16     |Gravado - Retiro por entrega a trabajadores
+GRAVADO_IVAP                    |17     |Gravado - IVAP
+EXONERADO_ONEROSA               |20     |Exonerado - Operación Onerosa
+EXONERADO_GRATUITA              |21     |Exonerado - Transferencia gratuita
+INAFECTO_ONEROSA                |30     |Inafecto - Operación Onerosa
+INAFECTO_BONIFICACION           |31     |Inafecto - Retiro por Bonificación
+INAFECTO_RETIRO                 |32     |Inafecto - Retiro
+INAFECTO_MUESTRAS_MEDICAS       |33     |Inafecto - Retiro por Muestras Médicas
+INAFECTO_CONVENIO_COLECTIVO     |34     |Inafecto - Retiro por Convenio Colectivo
+INAFECTO_PREMIO                 |35     |Inafecto - Retiro por premio
+INAFECTO_PUBLICIDAD             |36     |Inafecto - Retiro por publicidad
+INAFECTO_GRATUITA               |37     |Inafecto - Transferencia gratuita
+EXPORTACION                     |40     |Exportación de Bienes o Servicios
+
+### `Catálogo Nro. 08 - Código de Tipos de Sistema de Cálculo del ISC (TipoSistemaIsc)`
+
+Constante               |Código |Descripción
+------------------------|-------|---------------------------------------
+SISTEMA_VALOR           |01     |Sistema al valor
+APLICACION_MONTO_FIJO   |02     |Aplicación del monto fijo
+SISTEMA_PRECIO_PUBLICO  |03     |Sistema de precios de venta al público
+
+### `Catálogo Nro. 22 - Código de Regimen de Percepciones (RegimenPercepcion)`
+
+Constante               |Código |Descripción
+------------------------|-------|------------------------------------------------------
+VENTA_INTERNA           |01     |Percepción venta interna
+ADQUISICION_COMBUSTIBLE |02     |Percepción a la adquisición de combustible
+TASA_ESPECIAL           |03     |Percepción realizada al agente de percepción con tasa especial
+
+### `Catálogo Nro. 23 - Código de Regimen de Retenciones (RegimenRetencion)`
+
+Constante |Código |Descripción
+----------|-------|------------
+TASA_3    |01     |Tasa 3%
+TASA_6    |02     |Tasa 6%
