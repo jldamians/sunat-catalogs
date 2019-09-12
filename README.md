@@ -34,7 +34,7 @@ console.log(TipoTributo.nombreCat);
 console.log(TipoTributo.agenciaCat); 
 // Resultado: PE:SUNAT
 
-console.log(TipoTributo.uri); 
+console.log(TipoTributo.uriCat); 
 // Resultado: urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo05
 
 console.log(`Catálogo Nro. ${TipoTributo.numeroCat} - ${TipoTributo.tituloCat}`);
@@ -133,6 +133,33 @@ Constante               |Código |Descripción
 SISTEMA_VALOR           |01     |Sistema al valor
 APLICACION_MONTO_FIJO   |02     |Aplicación del monto fijo
 SISTEMA_PRECIO_PUBLICO  |03     |Sistema de precios de venta al público
+
+### `Catálogo Nro. 09 - Códigos de Tipo de Nota de Crédito (TipoNotaCredito)`
+
+Constante                     |Código |Descripción
+------------------------------|-------|---------------------------------------
+ANULACION_OPERACION           |01     |Anulación de la operación
+ANULACION_ERROR_RUC           |02     |Anulación por error en el RUC
+CORRECCION_ERROR_DESCRIPCION  |03     |Corrección por error en la descripción
+DESCUENTO_GLOBAL              |04     |Descuento global
+DESCUENTO_ITEM                |05     |Descuento por ítem
+DEVOLUCION_TOTAL              |06     |Devolución total
+DEVOLUCION_ITEM               |07     |Devolución por ítem
+BONIFICACION                  |08     |Bonificación
+DISMINUCION_VALOR             |09     |Disminución en el valor
+OTROS_CONCEPTOR               |10     |Otros Conceptos
+AJUSTES_OPERACION_EXPORTACION |11     |Ajustes de operaciones de exportación
+AJUSTES_AFECTOS_IVAP          |12     |Ajustes afectos al IVAP
+
+### `Catálogo Nro. 10 - Códigos de Tipo de Nota de Débito (TipoNotaDebito)`
+
+Constante                     |Código |Descripción
+------------------------------|-------|---------------------------------------
+INTERESES_MORA                |01     |Intereses por mora
+AUMENTO_VALOR                 |02     |Aumento en el valor
+PENALIDADES                   |03     |Penalidades/ otros conceptos
+AJUSTES_OPERACION_EXPORTACION |11     |Ajustes de operaciones de exportación
+AJUSTES_AFECTOS_IVAP          |12     |Ajustes afectos al IVAP
 
 ### `Catálogo Nro. 22 - Código de Regimen de Percepciones (RegimenPercepcion)`
 
