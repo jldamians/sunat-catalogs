@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/jldamians/sunat-catalogs/issues"
   },
-  "homepage": "https://github.com/jldamians/sunat-catalogs#readme"
+  "homepage": "https://github.com/jldamians/sunat-catalogs#readme",
+  "dependencies": {
+    "ubigeos": "^1.0.3"
+  }
 }
