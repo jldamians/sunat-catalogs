@@ -1,4 +1,6 @@
-## `Instalación y uso`
+
+
+### `Instalación y uso`
 
 ```console
 npm install --save sunat-catalogs
@@ -7,7 +9,7 @@ npm install --save sunat-catalogs
 const { Catalogos } = require('sunat-catalogs');
 ```
 
-## `Atributos Estáticos (Statics Attributes)`
+### `Atributos Estáticos (Statics Attributes)`
 
 `Todos los catálogos definidos en la sección "Definición de Catálogos", tendrán los siguientes atributos estáticos, los cuales nos permitiran acceder a los metadatos del catálogo.`
 
@@ -43,7 +45,7 @@ console.log(`Catálogo Nro. ${TipoTributo.numeroCat} - ${TipoTributo.tituloCat}`
 
 **`IMPORTANTE:`**`Los métodos estáticos se llaman sin crear instancias de su clase y tampoco son invocables cuando se instancia la clase.`
 
-## `Funciones`
+### `Funciones`
 
 `Todos los catálogos definidos en la sección "Definición de Catálogos", tendrán definida la función`**`descripcion()`**`para acceder a la descripción de los códigos de los catálogos.`**`Cada catálogo también cuenta con funciones propias.`**
 
@@ -65,9 +67,9 @@ console.log(tributo.codigo());
 // Resultado: OTH
 ```
 
-## Definición de Catálogos
+### Definición de Catálogos
 
-### `Catálogo Nro. 01 - Código de Tipo de Documento (TipoDocumento)`
+#### `Catálogo Nro. 01 - Código de Tipo de Documento (TipoDocumento)`
 
 Constante |Código |Descripción
 ----------|-------|-------------------------------
@@ -80,15 +82,28 @@ CPER      |20     |Comprobante de Retención
 GRT       |31     |Guía de Remisión Transportista
 CPEP      |40     |Comprobante de Percepción
 
-### `Catálogo Nro. 02 - Código de Tipo de Monedas (TipoMoneda)`
+#### `Catálogo Nro. 02 - Código de Tipo de Monedas (TipoMoneda)`
 
-Constante |Codigo | Descripción
+Constante |Código | Descripción
 ----------|-------|-------------
 PEN       |PEN    |Sol
 USD       |USD    |US Dollar
 EUR       |EUR    |Euro
 
-### `Catálogo Nro. 05 - Código de Tipos de Tributos (TipoTributo)`
+#### `Catálogo Nro. 03 - Códigos de Tipo de Unidad de Medida (TipoUnidadMedida)`
+
+Constante |Código | Descripción
+----------|-------|-------------
+NIU       |NIU    |Número de unidades internacionales
+ZZ        |ZZ     |Unidad de medida acordada entre dos partes
+
+#### `Catálogo Nro. 04 - Código de País (Pais)`
+
+Constante |Codigo | Descripción
+----------|-------|-------------
+PE        |PE     |Perú
+
+#### `Catálogo Nro. 05 - Código de Tipos de Tributos (TipoTributo)`
 
 Constante |Código |Descripción
 ----------|-------|----------------------------------------------
@@ -102,7 +117,7 @@ EXO       |9997   |Exonerado
 INA       |9998   |Inafecto
 OTROS     |9999   |Otros Tributos
 
-### `Catálogo Nro. 07 - Código de Tipo de Afectación del IGV (TipoAfectacionIgv)`
+#### `Catálogo Nro. 07 - Código de Tipo de Afectación del IGV (TipoAfectacionIgv)`
 
 Constante                       |Código |Descripción
 --------------------------------|-------|--------------------------------------------
@@ -126,7 +141,7 @@ INAFECTO_PUBLICIDAD             |36     |Inafecto - Retiro por publicidad
 INAFECTO_GRATUITA               |37     |Inafecto - Transferencia gratuita
 EXPORTACION                     |40     |Exportación de Bienes o Servicios
 
-### `Catálogo Nro. 08 - Código de Tipos de Sistema de Cálculo del ISC (TipoSistemaIsc)`
+#### `Catálogo Nro. 08 - Código de Tipos de Sistema de Cálculo del ISC (TipoSistemaIsc)`
 
 Constante               |Código |Descripción
 ------------------------|-------|---------------------------------------
@@ -134,7 +149,7 @@ SISTEMA_VALOR           |01     |Sistema al valor
 APLICACION_MONTO_FIJO   |02     |Aplicación del monto fijo
 SISTEMA_PRECIO_PUBLICO  |03     |Sistema de precios de venta al público
 
-### `Catálogo Nro. 09 - Códigos de Tipo de Nota de Crédito (TipoNotaCredito)`
+#### `Catálogo Nro. 09 - Códigos de Tipo de Nota de Crédito (TipoNotaCredito)`
 
 Constante                     |Código |Descripción
 ------------------------------|-------|---------------------------------------
@@ -147,11 +162,11 @@ DEVOLUCION_TOTAL              |06     |Devolución total
 DEVOLUCION_ITEM               |07     |Devolución por ítem
 BONIFICACION                  |08     |Bonificación
 DISMINUCION_VALOR             |09     |Disminución en el valor
-OTROS_CONCEPTOR               |10     |Otros Conceptos
+OTROS_CONCEPTOS               |10     |Otros Conceptos
 AJUSTES_OPERACION_EXPORTACION |11     |Ajustes de operaciones de exportación
 AJUSTES_AFECTOS_IVAP          |12     |Ajustes afectos al IVAP
 
-### `Catálogo Nro. 10 - Códigos de Tipo de Nota de Débito (TipoNotaDebito)`
+#### `Catálogo Nro. 10 - Códigos de Tipo de Nota de Débito (TipoNotaDebito)`
 
 Constante                     |Código |Descripción
 ------------------------------|-------|---------------------------------------
@@ -161,7 +176,34 @@ PENALIDADES                   |03     |Penalidades/ otros conceptos
 AJUSTES_OPERACION_EXPORTACION |11     |Ajustes de operaciones de exportación
 AJUSTES_AFECTOS_IVAP          |12     |Ajustes afectos al IVAP
 
-### `Catálogo Nro. 22 - Código de Regimen de Percepciones (RegimenPercepcion)`
+#### `Catálogo Nro. 12 - Código de Documentos Relacionados (DocumentoRelacionado)`
+
+Constante           |Código |Descripción
+--------------------|-------|------------------------------------------------
+FA_CORREGIR_RUC     |01     |Factura - emitida para corregir error en el RUC
+FA_ANTICIPO         |02     |Factura - emitida por anticipos
+BV_ANTICIPO         |03     |Boleta de Venta - emitida por anticipos
+TICKET_SALIDA_ENAPU |04     |Ticket de Salida - ENAPU
+CODIGO_SCOP         |05     |Código SCOP
+OTROS               |99     |Otros
+
+#### `Catálogo Nro. 16 - Código de Tipo de Precio de Venta (TipoPrecioVenta)`
+
+Constante                  |Código |Descripción
+---------------------------|-------|------------------------------------------------------
+PRECIO_UNITARIO            |01     |Precio unitario (incluye el IGV)
+VALOR_REFERENCIAL_UNITARIO |02     |Valor referencial unitario en operaciones no onerosas (Gratuitas)
+TARIFAS_REGULADAS          |03     |Tarifas reguladas
+
+#### `Catálogo Nro. 19 - Código de Estado del Ítem (EstadoItem)`
+
+Constante |Código |Descripción
+----------|-------|------------
+ADICIONAR |1      |Adicionar
+MODIFICAR |2      |Modificar
+ANULADO   |3      |Anulado
+
+#### `Catálogo Nro. 22 - Código de Regimen de Percepciones (RegimenPercepcion)`
 
 Constante               |Código |Descripción
 ------------------------|-------|------------------------------------------------------
@@ -169,7 +211,7 @@ VENTA_INTERNA           |01     |Percepción venta interna
 ADQUISICION_COMBUSTIBLE |02     |Percepción a la adquisición de combustible
 TASA_ESPECIAL           |03     |Percepción realizada al agente de percepción con tasa especial
 
-### `Catálogo Nro. 23 - Código de Regimen de Retenciones (RegimenRetencion)`
+#### `Catálogo Nro. 23 - Código de Regimen de Retenciones (RegimenRetencion)`
 
 Constante |Código |Descripción
 ----------|-------|------------
