@@ -1,5 +1,3 @@
-
-
 ### `Instalación y uso`
 
 ```console
@@ -86,22 +84,22 @@ CPEP      |40     |Comprobante de Percepción
 
 Constante |Código | Descripción
 ----------|-------|-------------
-PEN       |PEN    |Sol
-USD       |USD    |US Dollar
-EUR       |EUR    |Euro
+SOL       |PEN    |Sol
+DOLAR     |USD    |US Dollar
+EURO      |EUR    |Euro
 
 #### `Catálogo Nro. 03 - Códigos de Tipo de Unidad de Medida (TipoUnidadMedida)`
 
-Constante |Código | Descripción
-----------|-------|-------------
-NIU       |NIU    |Número de unidades internacionales
-ZZ        |ZZ     |Unidad de medida acordada entre dos partes
+Constante              |Código | Descripción
+-----------------------|-------|-------------
+UNIDAD_INTERNACIONAL   |NIU    |Número de unidades internacionales
+UNIDAD_MEDIDA_ACORDADA |ZZ     |Unidad de medida acordada entre dos partes
 
 #### `Catálogo Nro. 04 - Código de País (Pais)`
 
 Constante |Codigo | Descripción
 ----------|-------|-------------
-PE        |PE     |Perú
+PERU      |PE     |Perú
 
 #### `Catálogo Nro. 05 - Código de Tipos de Tributos (TipoTributo)`
 
