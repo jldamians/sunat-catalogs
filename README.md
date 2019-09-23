@@ -115,6 +115,19 @@ EXO       |9997   |Exonerado
 INA       |9998   |Inafecto
 OTROS     |9999   |Otros Tributos
 
+#### `Catálogo Nro. 06 - Código de Tipo de Documento de Identidad (TipoDocumentoIdentidad)`
+
+Constante          |Código |Descripción
+-------------------|-------|----------------------------------------------
+NO_DOMICILIADO     |0      |DOC.TRIB.NO.DOM.SIN.RUC
+DNI                |1      |Documento Nacional de Identidad
+CARNET_EXTRANJERIA |4      |Carnet de extranjería
+RUC                |6      |Registro Unico de Contributentes
+PASAPORTE          |7      |Pasaporte
+TIN                |C      |TIN - Doc Trib PP.NN
+IN                 |D      |IN - Doc Trib PP. JJ
+TAM                |E      |TAM - Tarjeta Andina de Migración
+
 #### `Catálogo Nro. 07 - Código de Tipo de Afectación del IGV (TipoAfectacionIgv)`
 
 Constante                       |Código |Descripción
@@ -215,3 +228,29 @@ Constante |Código |Descripción
 ----------|-------|------------
 TASA_3    |01     |Tasa 3%
 TASA_6    |02     |Tasa 6%
+
+#### `Catálogo Nro. 51 - Códigos de Tipo de Operación (TipoOperacion)`
+
+Constante                                         |Código |Descripción
+--------------------------------------------------|-------|-------------------------------------------
+VENTA_INTERNA                                     |0101   |Venta interna
+VENTA_INTERNA_GASTOS_DEDUCIBLES                   |0112   |Sustenta gastos deducibles PPNN
+VENTA_INTERNA_NRUS                                |0113   |NRUS
+EXPORTACION_BIENES                                |0200   |Exportación de Bienes
+EXPORTACION_SERVICIOS_INTEGRAMENTE_PAIS           |0201   |Prestación servicios realizados íntegramente en el país
+EXPORTACION_SERVICIOS_HOSPEDAJE_NO_DOMICILIADO    |0202   |Prestación de servicios de hospedaje no domiciliado
+EXPORTACION_SERVICIOS_TRANSPORTE_NAVIERAS         |0203   |Transporte de navieras
+EXPORTACION_SERVICIOS_NAVES_AERONAVES_EXTRANJERAS |0204   |Servicios  a naves y aeronaves de bandera extranjera
+EXPORTACION_SERVICIOS_PAQUETE_TURISTICO           |0205   |Servicios que conformen un paquete turístico
+EXPORTACION_SERVICIOS_TRANSPORTE_CARGA            |0206   |Servicios complementarios al transporte de carga
+EXPORTACION_SERVICIOS_SUMINISTRO_ELECTRICO_ZED    |0207   |Suministro de energía eléctrica domiciliados en ZED
+EXPORTACION_SERVICIOS_PARCIALMENTE_EXTRANJERO     |0208   |Prestación servicios realizados parcialmente en el extranjero
+OPERACIONES_CARTA_PORTE_AEREO                     |0301   |Operaciones con carta de porte aéreo
+OPERACIONES_TRANSPORTE_FERROVIARIO                |0302   |Operaciones de transporte ferroviario de pasajeros
+OPERACIONES_REGALIA_PETROLEO                      |0303   |Operaciones de pago de regalía petrolera
+VENTA_NO_DOMICILIADA_NO_CALIFICA_EXPORTACION      |0401   |Ventas no domiciliados que no califican como exportación
+OPERACION_DETRACCION                              |1001   |Operación sujeta a detracción
+OPERACION_DETRACCION_RECURSOS_HIDROBIOLOGICOS     |1002   |Recursos hidrobiológicos
+OPERACION_DETRACCION_TRANSPORTE_PASAJEROS         |1003   |Servicios de transporte pasajeros
+OPERACION_DETRACCION_TRANSPORTE_CARGA             |1004   |Servicios de transporte carga
+OPERACION_PERCEPCION                              |2001   |Operación sujeta a percepción
