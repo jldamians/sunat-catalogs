@@ -4,7 +4,7 @@
 npm install --save sunat-catalogs
 ```
 ```js
-const { Catalogos } = require('sunat-catalogs');
+const Catalogs = require('sunat-catalogs');
 ```
 
 ### `Atributos Estáticos (Statics Attributes)`
@@ -67,7 +67,22 @@ console.log(tributo.codigo());
 
 ### Definición de Catálogos
 
-#### `Catálogo Nro. 01 - Código de Tipo de Documento (TipoDocumento)`
+#### `Catálogo Nro. 01 - Código de Tipo de Documento`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoDocumeto`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de documento
+
+```javascript
+const { TipoDocumento } = require('sunat-catalogs');
+
+const documento = new TipoDocumento(TipoDocumento.FA);
+
+console.log(documento.descripcion());
+// Resultado: Factura
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante |Código |Descripción
 ----------|-------|-------------------------------
@@ -80,7 +95,22 @@ CPER      |20     |Comprobante de Retención
 GRT       |31     |Guía de Remisión Transportista
 CPEP      |40     |Comprobante de Percepción
 
-#### `Catálogo Nro. 02 - Código de Tipo de Monedas (TipoMoneda)`
+#### `Catálogo Nro. 02 - Código de Tipo de Monedas`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoMoneda`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de moneda
+
+```javascript
+const { TipoMoneda } = require('sunat-catalogs');
+
+const moneda = new TipoMoneda(TipoMoneda.SOL);
+
+console.log(moneda.descripcion());
+// Resultado: Sol
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante |Código | Descripción
 ----------|-------|-------------
@@ -88,20 +118,77 @@ SOL       |PEN    |Sol
 DOLAR     |USD    |US Dollar
 EURO      |EUR    |Euro
 
-#### `Catálogo Nro. 03 - Códigos de Tipo de Unidad de Medida (TipoUnidadMedida)`
+#### `Catálogo Nro. 03 - Códigos de Tipo de Unidad de Medida`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoUnidadMedida`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de unidad de medida
+
+```javascript
+const { TipoUnidadMedida } = require('sunat-catalogs');
+
+const medida = new TipoUnidadMedida(TipoUnidadMedida.UNIDAD_INTERNACIONAL);
+
+console.log(medida.descripcion());
+// Resultado: Número de unidades internacionales
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante              |Código | Descripción
 -----------------------|-------|-------------
 UNIDAD_INTERNACIONAL   |NIU    |Número de unidades internacionales
 UNIDAD_MEDIDA_ACORDADA |ZZ     |Unidad de medida acordada entre dos partes
 
-#### `Catálogo Nro. 04 - Código de País (Pais)`
+#### `Catálogo Nro. 04 - Código de País`
+
+Para este catálogo se ha definido la clase de nombre  **`Pais`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del país
+
+```javascript
+const { Pais } = require('sunat-catalogs');
+
+const pais = new Pais(Pais.PERU);
+
+console.log(pais.descripcion());
+// Resultado: Perú
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante |Codigo | Descripción
 ----------|-------|-------------
 PERU      |PE     |Perú
 
-#### `Catálogo Nro. 05 - Código de Tipos de Tributos (TipoTributo)`
+#### `Catálogo Nro. 05 - Código de Tipos de Tributos`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoTributo`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de tributo
+ - `nombre()`- Permite obtener el nombre del tipo de tributo
+ - `categoria()`- Permite obtener la categoría del tipo de tributo
+ - `codigo()`- Permite obtener el código internacional del tipo de tributo
+
+```javascript
+const { TipoTributo } = require('sunat-catalogs');
+
+const tributo = new TipoTributo(TipoTributo.IGV);
+
+console.log(tributo.descripcion());
+// Resultado: IGV Impuesto General a las Ventas
+
+console.log(tributo.nombre());
+// Resultado: IGV
+
+console.log(tributo.categoria());
+// Resultado: S
+
+console.log(tributo.codigo());
+// Resultado: VAT
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante |Código |Descripción
 ----------|-------|----------------------------------------------
@@ -115,7 +202,22 @@ EXO       |9997   |Exonerado
 INA       |9998   |Inafecto
 OTROS     |9999   |Otros Tributos
 
-#### `Catálogo Nro. 06 - Código de Tipo de Documento de Identidad (TipoDocumentoIdentidad)`
+#### `Catálogo Nro. 06 - Código de Tipo de Documento de Identidad`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoDocumentoIdentidad`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del documento de identidad
+
+```javascript
+const { TipoDocumentoIdentidad } = require('sunat-catalogs');
+
+const documento = new TipoDocumentoIdentidad(TipoDocumentoIdentidad.DNI);
+
+console.log(documento.descripcion());
+// Resultado: Documento Nacional de Identidad
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante          |Código |Descripción
 -------------------|-------|----------------------------------------------
@@ -128,7 +230,30 @@ TIN                |C      |TIN - Doc Trib PP.NN
 IN                 |D      |IN - Doc Trib PP. JJ
 TAM                |E      |TAM - Tarjeta Andina de Migración
 
-#### `Catálogo Nro. 07 - Código de Tipo de Afectación del IGV (TipoAfectacionIgv)`
+#### `Catálogo Nro. 07 - Código de Tipo de Afectación del IGV`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoAfectacionIgv`**, la misma que cuenta con las siguientes funciones:
+
+- `descripcion()`- Permite obtener la descripción del tipo de afectación
+- `codTributo(onerosa)`- Permite obtener el código del tributo relacionado al tipo de afectación
+  - `onerosa`- Definir como `true` si la operación es onerosa y `false` si la operación es gratuita
+
+```javascript
+const { TipoAfectacionIgv } = require('sunat-catalogs');
+
+const afectacion = new TipoAfectacionIgv(TipoAfectacionIgv.GRAVADO_IVAP);
+
+console.log(afectacion.descripcion());
+// Resultado: Gravado - IVAP
+
+console.log(afectacion.codTributo(true));
+// Resultado: 1016
+
+console.log(afectacion.codTributo(false));
+// Resultado: 9996
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante                       |Código |Descripción
 --------------------------------|-------|--------------------------------------------
@@ -152,7 +277,22 @@ INAFECTO_PUBLICIDAD             |36     |Inafecto - Retiro por publicidad
 INAFECTO_GRATUITA               |37     |Inafecto - Transferencia gratuita
 EXPORTACION                     |40     |Exportación de Bienes o Servicios
 
-#### `Catálogo Nro. 08 - Código de Tipos de Sistema de Cálculo del ISC (TipoSistemaIsc)`
+#### `Catálogo Nro. 08 - Código de Tipos de Sistema de Cálculo del ISC`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoSistemaIsc`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de sistema de cálculo
+
+```javascript
+const { TipoSistemaIsc } = require('sunat-catalogs');
+
+const documento = new TipoSistemaIsc(TipoSistemaIsc.SISTEMA_VALOR);
+
+console.log(documento.descripcion());
+// Resultado: Sistema al valor
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante               |Código |Descripción
 ------------------------|-------|---------------------------------------
@@ -160,7 +300,22 @@ SISTEMA_VALOR           |01     |Sistema al valor
 APLICACION_MONTO_FIJO   |02     |Aplicación del monto fijo
 SISTEMA_PRECIO_PUBLICO  |03     |Sistema de precios de venta al público
 
-#### `Catálogo Nro. 09 - Códigos de Tipo de Nota de Crédito (TipoNotaCredito)`
+#### `Catálogo Nro. 09 - Códigos de Tipo de Nota de Crédito`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoNotaCredito`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de nota de crédito
+
+```javascript
+const { TipoNotaCredito } = require('sunat-catalogs');
+
+const nc = new TipoNotaCredito(TipoNotaCredito.ANULACION_OPERACION);
+
+console.log(nc.descripcion());
+// Resultado: Anulación de la operación
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante                     |Código |Descripción
 ------------------------------|-------|---------------------------------------
@@ -177,7 +332,22 @@ OTROS_CONCEPTOS               |10     |Otros Conceptos
 AJUSTES_OPERACION_EXPORTACION |11     |Ajustes de operaciones de exportación
 AJUSTES_AFECTOS_IVAP          |12     |Ajustes afectos al IVAP
 
-#### `Catálogo Nro. 10 - Códigos de Tipo de Nota de Débito (TipoNotaDebito)`
+#### `Catálogo Nro. 10 - Códigos de Tipo de Nota de Débito`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoNotaDebito`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de nota de débito
+
+```javascript
+const { TipoNotaDebito } = require('sunat-catalogs');
+
+const nd = new TipoNotaDebito(TipoNotaDebito.INTERESES_MORA);
+
+console.log(nd.descripcion());
+// Resultado: Intereses por mora
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante                     |Código |Descripción
 ------------------------------|-------|---------------------------------------
@@ -187,7 +357,22 @@ PENALIDADES                   |03     |Penalidades/ otros conceptos
 AJUSTES_OPERACION_EXPORTACION |11     |Ajustes de operaciones de exportación
 AJUSTES_AFECTOS_IVAP          |12     |Ajustes afectos al IVAP
 
-#### `Catálogo Nro. 12 - Código de Documentos Relacionados (DocumentoRelacionado)`
+#### `Catálogo Nro. 12 - Código de Documentos Relacionados`
+
+Para este catálogo se ha definido la clase de nombre  **`DocumentoRelacionado`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del documento relacionado
+
+```javascript
+const { DocumentoRelacionado } = require('sunat-catalogs');
+
+const documento = new DocumentoRelacionado(DocumentoRelacionado.FA_ANTICIPO);
+
+console.log(documento.descripcion());
+// Resultado: Factura - emitida por anticipos
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante           |Código |Descripción
 --------------------|-------|------------------------------------------------
@@ -200,13 +385,43 @@ OTROS               |99     |Otros
 
 #### `Catálogo Nro. 16 - Código de Tipo de Precio de Venta (TipoPrecioVenta)`
 
+Para este catálogo se ha definido la clase de nombre  **`DocumentoRelacionado`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del documento relacionado
+
+```javascript
+const { DocumentoRelacionado } = require('sunat-catalogs');
+
+const documento = new DocumentoRelacionado(DocumentoRelacionado.FA_ANTICIPO);
+
+console.log(documento.descripcion());
+// Resultado: Factura - emitida por anticipos
+```
+
+En la siguiente tabla se describen las constantes disponibles:
+
 Constante                  |Código |Descripción
 ---------------------------|-------|------------------------------------------------------
 PRECIO_UNITARIO            |01     |Precio unitario (incluye el IGV)
 VALOR_REFERENCIAL_UNITARIO |02     |Valor referencial unitario en operaciones no onerosas (Gratuitas)
 TARIFAS_REGULADAS          |03     |Tarifas reguladas
 
-#### `Catálogo Nro. 19 - Código de Estado del Ítem (EstadoItem)`
+#### `Catálogo Nro. 19 - Código de Estado del Ítem`
+
+Para este catálogo se ha definido la clase de nombre  **`EstadoItem`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del estado de ítem
+
+```javascript
+const { EstadoItem } = require('sunat-catalogs');
+
+const estado = new EstadoItem(EstadoItem.ADICIONAR);
+
+console.log(estado.descripcion());
+// Resultado: Adicionar
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante |Código |Descripción
 ----------|-------|------------
@@ -214,7 +429,26 @@ ADICIONAR |1      |Adicionar
 MODIFICAR |2      |Modificar
 ANULADO   |3      |Anulado
 
-#### `Catálogo Nro. 22 - Código de Regimen de Percepciones (RegimenPercepcion)`
+#### `Catálogo Nro. 22 - Código de Regimen de Percepciones`
+
+Para este catálogo se ha definido la clase de nombre  **`RegimenPercepcion`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción de la percepción
+ - `tasa()`- Permite obtener la tasa de percepción
+
+```javascript
+const { RegimenPercepcion } = require('sunat-catalogs');
+
+const percepcion = new RegimenPercepcion(RegimenPercepcion.VENTA_INTERNA);
+
+console.log(percepcion.descripcion());
+// Resultado: Percepción venta interna
+
+console.log(percepcion.tasa());
+// Resultado: 2.00
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante               |Código |Descripción
 ------------------------|-------|------------------------------------------------------
@@ -222,14 +456,48 @@ VENTA_INTERNA           |01     |Percepción venta interna
 ADQUISICION_COMBUSTIBLE |02     |Percepción a la adquisición de combustible
 TASA_ESPECIAL           |03     |Percepción realizada al agente de percepción con tasa especial
 
-#### `Catálogo Nro. 23 - Código de Regimen de Retenciones (RegimenRetencion)`
+#### `Catálogo Nro. 23 - Código de Regimen de Retenciones`
+
+Para este catálogo se ha definido la clase de nombre  **`RegimenRetencion`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción de la retención
+ - `tasa()`- Permite obtener la tasa de retención
+
+```javascript
+const { RegimenRetencion } = require('sunat-catalogs');
+
+const retencion = new RegimenRetencion(RegimenRetencion.TASA_3);
+
+console.log(retencion.descripcion());
+// Resultado: Tasa 3%
+
+console.log(retencion.tasa());
+// Resultado: 3.00
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante |Código |Descripción
 ----------|-------|------------
 TASA_3    |01     |Tasa 3%
 TASA_6    |02     |Tasa 6%
 
-#### `Catálogo Nro. 51 - Códigos de Tipo de Operación (TipoOperacion)`
+#### `Catálogo Nro. 51 - Códigos de Tipo de Operación`
+
+Para este catálogo se ha definido la clase de nombre  **`TipoOperacion`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del tipo de operación
+
+```javascript
+const { TipoOperacion } = require('sunat-catalogs');
+
+const operacion = new TipoOperacion(TipoOperacion.VENTA_INTERNA);
+
+console.log(operacion.descripcion());
+// Resultado: Venta interna
+```
+
+En la siguiente tabla se describen las constantes disponibles:
 
 Constante                                         |Código |Descripción
 --------------------------------------------------|-------|-------------------------------------------
