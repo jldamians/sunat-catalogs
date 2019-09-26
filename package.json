@@ -1,6 +1,6 @@
 {
   "name": "sunat-catalogs",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Anexo Nro. 8 - Catálogos de Códigos",
   "main": "./lib/index.js",
   "directories": {
