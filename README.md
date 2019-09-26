@@ -522,3 +522,37 @@ OPERACION_DETRACCION_RECURSOS_HIDROBIOLOGICOS     |1002   |Recursos hidrobiológ
 OPERACION_DETRACCION_TRANSPORTE_PASAJEROS         |1003   |Servicios de transporte pasajeros
 OPERACION_DETRACCION_TRANSPORTE_CARGA             |1004   |Servicios de transporte carga
 OPERACION_PERCEPCION                              |2001   |Operación sujeta a percepción
+
+#### `Catálogo Nro. 53 - Códigos de Cargos o Descuentos`
+
+Para este catálogo se ha definido la clase de nombre  **`CargoDescuento`**, la misma que cuenta con las siguientes funciones:
+
+ - `descripcion()`- Permite obtener la descripción del cargo o descuento
+ - `indicador()`- Permite determinar si el código corresponde a un cargo (true) o un descuento (false)
+ - `nivel()`- Permite obtener el nivel relacionado al código (item o global)
+ - `esCargoDet()`- Permite determinal si el código corresponde a un cargo por detalle (true o false)
+ - `esDescuentoDet()`- Permite determinal si el código corresponde a un descuento por detalle (true o false)
+ - `esCargoGlb()`- Permite determinal si el código corresponde a un cargo global (true o false)
+ - `esDescuentoGlb()`- Permite determinal si el código corresponde a un descuento global (true o false)
+
+```javascript
+const { CargoDescuento } = require('sunat-catalogs');
+
+const operacion = new CargoDescuento(CargoDescuento.VENTA_INTERNA);
+
+console.log(operacion.descripcion());
+// Resultado: Venta interna
+```
+
+En la siguiente tabla se describen las constantes disponibles:
+
+Constante                             |Código |Descripción
+--------------------------------------|-------|-------------------------------------------
+DCTOS_ITEM_AFECTA_BASE_IGV_IVAP       |00     |Descuentos que afectan la base imponible del IGV/IVAP
+DCTOS_ITEM_NO_AFECTA_BASE_IGV_IVAP    |01     |Descuentos que no afectan la base imponible del IGV/IVAP
+DCTOS_GLOBAL_AFECTA_BASE_IGV_IVAP     |02     |Descuentos globales que afectan la base imponible del IGV/IVAP
+DCTOS_GLOBAL_NO_AFECTA_BASE_IGV_IVAP  |03     |Descuentos globales que no afectan la base imponible del IGV/IVAP
+CARGOS_ITEM_AFECTA_BASE_IGV_IVAP      |47     |Cargos que afectan la base imponible del IGV/IVAP
+CARGOS_ITEM_NO_AFECTA_BASE_IGV_IVAP   |48     |Cargos que no afectan la base imponible del IGV/IVAP
+CARGOS_GLOBAL_AFECTA_BASE_IGV_IVAP    |49     |Cargos globales que afectan la base imponible del IGV/IVAP
+CARGOS_GLOBAL_NO_AFECTA_BASE_IGV_IVAP |50     |Cargos globales que no afectan la base imponible del IGV/IVAP
