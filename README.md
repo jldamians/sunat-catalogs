@@ -528,20 +528,20 @@ OPERACION_PERCEPCION                              |2001   |Operación sujeta a p
 Para este catálogo se ha definido la clase de nombre  **`CargoDescuento`**, la misma que cuenta con las siguientes funciones:
 
  - `descripcion()`- Permite obtener la descripción del cargo o descuento
- - `indicador()`- Permite determinar si el código corresponde a un cargo (true) o un descuento (false)
+ - `indicador()`- Permite saber si el código corresponde a un cargo (true) o un descuento (false)
  - `nivel()`- Permite obtener el nivel relacionado al código (item o global)
- - `esCargoDet()`- Permite determinal si el código corresponde a un cargo por detalle (true o false)
- - `esDescuentoDet()`- Permite determinal si el código corresponde a un descuento por detalle (true o false)
- - `esCargoGlb()`- Permite determinal si el código corresponde a un cargo global (true o false)
- - `esDescuentoGlb()`- Permite determinal si el código corresponde a un descuento global (true o false)
+ - `esCargoDet()`- Determina si corresponde a un cargo por detalle (true o false)
+ - `esDescuentoDet()`- Determina si corresponde a un descuento por detalle (true o false)
+ - `esCargoGlb()`- Determina si corresponde a un cargo global (true o false)
+ - `esDescuentoGlb()`- Determina si corresponde a un descuento global (true o false)
 
 ```javascript
 const { CargoDescuento } = require('sunat-catalogs');
 
-const operacion = new CargoDescuento(CargoDescuento.VENTA_INTERNA);
+const operacion = new CargoDescuento(CargoDescuento.DCTOS_ITEM_AFECTA_BASE_IGV_IVAP);
 
 console.log(operacion.descripcion());
-// Resultado: Venta interna
+// Resultado: Descuentos que afectan la base imponible del IGV/IVAP
 ```
 
 En la siguiente tabla se describen las constantes disponibles:
